@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
+import eventsRoute from "./routes/eventsRoute.js"
 
 dotenv.config(); // Load environment variables
 
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/products", productRoute);
+app.use("/events", eventsRoute);
 
 // Database Connection (Removing Deprecated Options)
 mongoose
